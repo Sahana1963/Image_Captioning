@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Image Captioning AI</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h2>🖼️ Upload Image for AI Captioning</h2>
+  <form method="POST" action="/caption" enctype="multipart/form-data">
+    <input type="file" name="image" accept="image/*" required>
+    <button type="submit">Generate Caption</button>
+  </form>
+
+  {% if caption %}
+    <h3>📝 Caption:</h3>
+    <p>{{ caption }}</p>
+  {% endif %}
+</body>
+</html>
